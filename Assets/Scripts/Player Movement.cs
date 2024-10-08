@@ -9,7 +9,7 @@ public class PlayerControls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    speed = 2;
+    speed = 20;
     }
 
     // Update is called once per frame
@@ -55,6 +55,6 @@ public class PlayerControls : MonoBehaviour
     }
     private void Move(Vector2 direction, int speed)
     {
-        PlayerRB.velocity = new Vector2(speed*direction.x, speed*direction.y);
+        PlayerRB.velocity = direction.normalized * speed * Time.deltaTime * 100f;
     }
 }
