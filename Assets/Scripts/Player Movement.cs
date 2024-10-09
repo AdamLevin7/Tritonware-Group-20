@@ -5,11 +5,11 @@ using UnityEngine;
 public class PlayerControls : MonoBehaviour
 {
     public Rigidbody2D PlayerRB;
-    private int speed;
+    public int speed;
     // Start is called before the first frame update
     void Start()
     {
-    speed = 20;
+     
     }
 
     // Update is called once per frame
