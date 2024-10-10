@@ -8,23 +8,25 @@ public class InteractionObjectModel : MonoBehaviour
     private Collider2D collider2D;
 
     // General Properties
-    public bool IsRevivable { get; set; }
-    public bool IsCollectable { get; set; }
-    public string ObjectType { get; set; } // ie Animal, Crop, Other
-    public string ObjectName { get; set; } // ie Cow, Wheat, etc.
+    public bool IsRevivable;
+    public bool IsCollectable; 
+    
+    public string ObjectType; // ie Animal, Crop, Other
+
+    public string ObjectName; // ie Cow, Wheat, etc.
 
     // General States
-    public bool IsDead { get; private set; } // True if dead
-    public bool IsDamaged { get; private set; } // True if damaged
+    public bool IsDead; // True if dead
+    public bool IsDamaged; // True if damaged
 
     // Crop-specific variables
-    public string CropType { get; set; } // e.g., Apple trees, Wheat
-    public int GrowthStage { get; private set; } // 0 = seedling, 1 = growing, 2 = fully grown
-    public float GrowthRate { get; set; } // Speed of growth (varies per crop type)
+    public string CropType; // e.g., Apple trees, Wheat
+    public int GrowthStage; // 0 = seedling, 1 = growing, 2 = fully grown
+    public float GrowthRate; // Speed of growth (varies per crop type)
 
     // Animal-specific variables
-    public string AnimalType { get; set; } // e.g., Cow, Chicken, Horse
-    public bool IsRunningAround { get; private set; } // True if the animal is not contained
+    public string AnimalType; // e.g., Cow, Chicken, Horse
+    public bool IsRunningAround; // True if the animal is not contained
 
     // Setter Methods General States
     public void SetIsDead(bool state)
