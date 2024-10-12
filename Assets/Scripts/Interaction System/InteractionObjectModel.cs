@@ -6,7 +6,7 @@ public class InteractionObjectModel : MonoBehaviour
 {
     // 2D Collider Aspect
     public Collider2D collider2D;
-
+    private InteractionView interactionView;
     // General Properties
     public bool IsRevivable;
     public bool IsCollectable; 
@@ -52,6 +52,10 @@ public class InteractionObjectModel : MonoBehaviour
     public void SetIsDead(bool state)
     {
         IsDead = state;
+        if (interactionView != null)
+        {
+            interactionView.UpdateRender();
+        }
         if (state)
         {
             // Additional logic for when the object is dead (ie disable interaction)
@@ -62,6 +66,10 @@ public class InteractionObjectModel : MonoBehaviour
     public void SetIsDamaged(bool state)
     {
         IsDamaged = state;
+        if (interactionView != null)
+        {
+            interactionView.UpdateRender();
+        }
         if (state)
         {
             // Additional logic for when the object is damaged
@@ -76,6 +84,10 @@ public class InteractionObjectModel : MonoBehaviour
         {
             GrowthStage = Mathf.Clamp(stage, 0, 2); // Clamp between 0 and 2
             Debug.Log($"{ObjectName} growth stage is now {GrowthStage}.");
+            if (interactionView != null)
+            {
+                interactionView.UpdateRender();
+            }
         }
     }
 
@@ -101,6 +113,11 @@ public class InteractionObjectModel : MonoBehaviour
     void Start()
     {
         collider2D = GetComponent<Collider2D>(); // Initialize 2D Collider
+        interactionView = GetComponent<InteractionView>();
+        if (interactionView != null)
+        {
+            interactionView.UpdateRender();
+        }
     }
 }
 

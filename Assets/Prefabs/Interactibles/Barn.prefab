@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -5470090471511159829}
   - component: {fileID: 3956657876800506691}
   - component: {fileID: 4186607736806083353}
+  - component: {fileID: -4588111428543109067}
   m_Layer: 0
   m_Name: Barn
   m_TagString: Untagged
@@ -174,3 +175,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-4588111428543109067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200525463936766306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b46a5c9475d4c00ad5bd01689babde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSprite: {fileID: 0}
+  damagedSprite: {fileID: 0}
+  deadSprite: {fileID: 0}
+  cropGrowthSprites: []
