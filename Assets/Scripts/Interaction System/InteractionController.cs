@@ -7,14 +7,26 @@ public class InteractionController : MonoBehaviour
     public InventorySystem inventorySystem; // Reference to the inventory system
     private InteractionObjectModel interactableObject = null;
 
+    void Start()
+    {
+        // Assuming your InventorySystem is attached to an object named "InventoryManager"
+        inventorySystem = GameObject.Find("InventoryHolder").GetComponent<InventorySystem>();
+
+        if (inventorySystem == null)
+        {
+            Debug.LogError("InventorySystem not found! Make sure it is assigned.");
+        }
+    }   
+
+
     // This method is called when the player enters the trigger zone
-    void OnTriggerEnter2D(Collider2D collider)
+    void OnCollisionEnter2D(Collision2D collider)
     {
         interactableObject = collider.gameObject.GetComponent<InteractionObjectModel>();
     }
 
     // This method is called when the player leaves the trigger zone
-    void OnTriggerExit2D(Collider2D collider)
+    void OnCollisionExit2D(Collision2D collider)
     {
         // When the player leaves the interaction zone, clear the interactable object reference
         if (collider.gameObject.GetComponent<InteractionObjectModel>() != null)
@@ -30,18 +42,19 @@ public class InteractionController : MonoBehaviour
         if (interactableObject != null && Input.GetKey(KeyCode.E))
         {
             HandleInteraction(interactableObject);
-            Debug.Log("Key pressed");
         }
     }
     // Interaction logic based on object state
     void HandleInteraction(InteractionObjectModel interactableObject)
     {
+        Debug.Log("Key pressed");
         // Check if object is dead
         if (interactableObject.GetIsDead())
         {
             // Check if revivable
             if (interactableObject.GetIsRevivable())
             {
+                Debug.Log("got revive");
                 // Attempt to revive using inventory system
                 if (inventorySystem.CheckReviveItemByName(interactableObject.GetObjectName()))
                 {
