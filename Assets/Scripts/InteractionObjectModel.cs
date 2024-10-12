@@ -43,7 +43,7 @@ public class InteractionObjectModel : MonoBehaviour
     // Generates a unique ID using the object's name and a counter
     private void GenerateUniqueID()
     {
-        objectID = $"{gameObject.name}_{idCounter}";
+        objectID = $"{ObjectName}_{idCounter}";
         idCounter++;
     }
 
