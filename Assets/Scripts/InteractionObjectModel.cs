@@ -5,7 +5,7 @@ using UnityEngine;
 public class InteractionObjectModel : MonoBehaviour
 {
     // 2D Collider Aspect
-    private Collider2D collider2D;
+    public Collider2D collider2D;
 
     // General Properties
     public bool IsRevivable;
@@ -27,6 +27,25 @@ public class InteractionObjectModel : MonoBehaviour
     // Animal-specific variables
     public string AnimalType; // e.g., Cow, Chicken, Horse
     public bool IsRunningAround; // True if the animal is not contained
+
+    // Human-readable ID creation
+    public string objectID;
+    private static int idCounter = 0;
+
+    void Awake()
+    {
+        if (string.IsNullOrEmpty(objectID))
+        {
+            GenerateUniqueID();
+        }
+    }
+
+    // Generates a unique ID using the object's name and a counter
+    private void GenerateUniqueID()
+    {
+        objectID = $"{gameObject.name}_{idCounter}";
+        idCounter++;
+    }
 
     // Setter Methods General States
     public void SetIsDead(bool state)

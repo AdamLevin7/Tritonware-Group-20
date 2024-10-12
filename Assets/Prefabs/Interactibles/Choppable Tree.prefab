@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3956657876800506691}
   - component: {fileID: 4186607736806083353}
   m_Layer: 0
-  m_Name: Barn
+  m_Name: Choppable Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
