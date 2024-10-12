@@ -47,6 +47,7 @@ public class InteractionObjectModel : MonoBehaviour
         idCounter++;
     }
 
+
     // Setter Methods General States
     public void SetIsDead(bool state)
     {
