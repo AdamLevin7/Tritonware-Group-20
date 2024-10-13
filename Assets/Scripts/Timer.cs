@@ -26,6 +26,7 @@ public class Timer : MonoBehaviour
        time -= Time.deltaTime;
        if(time <= 0.0f){
         lose();
+        Destroy(this.gameObject);
        }
        StopWatch.fillAmount -= 1.0f / startTime * Time.deltaTime;
     }

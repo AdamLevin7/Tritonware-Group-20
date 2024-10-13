@@ -91,3 +91,4 @@ MonoBehaviour:
   startTime: 5
   StopWatch: {fileID: 768894384510346872}
   loseScene: You Lost
+  TimerObject: {fileID: 2480337327665420018}
