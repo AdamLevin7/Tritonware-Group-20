@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: -5470090471511159829}
   - component: {fileID: 3956657876800506691}
   - component: {fileID: 4186607736806083353}
-  - component: {fileID: -4345532998032997096}
+  - component: {fileID: 7509779482929167860}
   m_Layer: 0
-  m_Name: Cow
+  m_Name: InteractionObjectTemplate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -175,7 +175,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-4345532998032997096
+--- !u!114 &7509779482929167860
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

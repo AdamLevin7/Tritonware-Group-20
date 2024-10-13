@@ -5,8 +5,8 @@ using UnityEngine;
 public class InteractionObjectModel : MonoBehaviour
 {
     // 2D Collider Aspect
-    private Collider2D collider2D;
-
+    public Collider2D collider2D;
+    private InteractionView interactionView;
     // General Properties
     public bool IsRevivable;
     public bool IsCollectable; 
@@ -28,10 +28,34 @@ public class InteractionObjectModel : MonoBehaviour
     public string AnimalType; // e.g., Cow, Chicken, Horse
     public bool IsRunningAround; // True if the animal is not contained
 
+    // Human-readable ID creation
+    public string objectID;
+    private static int idCounter = 0;
+
+    void Awake()
+    {
+        if (string.IsNullOrEmpty(objectID))
+        {
+            GenerateUniqueID();
+        }
+    }
+
+    // Generates a unique ID using the object's name and a counter
+    private void GenerateUniqueID()
+    {
+        objectID = $"{ObjectName}_{idCounter}";
+        idCounter++;
+    }
+
+
     // Setter Methods General States
     public void SetIsDead(bool state)
     {
         IsDead = state;
+        if (interactionView != null)
+        {
+            interactionView.UpdateRender();
+        }
         if (state)
         {
             // Additional logic for when the object is dead (ie disable interaction)
@@ -42,6 +66,10 @@ public class InteractionObjectModel : MonoBehaviour
     public void SetIsDamaged(bool state)
     {
         IsDamaged = state;
+        if (interactionView != null)
+        {
+            interactionView.UpdateRender();
+        }
         if (state)
         {
             // Additional logic for when the object is damaged
@@ -56,6 +84,10 @@ public class InteractionObjectModel : MonoBehaviour
         {
             GrowthStage = Mathf.Clamp(stage, 0, 2); // Clamp between 0 and 2
             Debug.Log($"{ObjectName} growth stage is now {GrowthStage}.");
+            if (interactionView != null)
+            {
+                interactionView.UpdateRender();
+            }
         }
     }
 
@@ -81,6 +113,11 @@ public class InteractionObjectModel : MonoBehaviour
     void Start()
     {
         collider2D = GetComponent<Collider2D>(); // Initialize 2D Collider
+        interactionView = GetComponent<InteractionView>();
+        if (interactionView != null)
+        {
+            interactionView.UpdateRender();
+        }
     }
 }
 
