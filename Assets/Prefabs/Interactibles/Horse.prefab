@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3956657876800506691}
   - component: {fileID: 4186607736806083353}
   - component: {fileID: 5927405070820137354}
+  - component: {fileID: -6892040494927940483}
   m_Layer: 0
   m_Name: Horse
   m_TagString: Untagged
@@ -51,6 +52,7 @@ MonoBehaviour:
   collider2D: {fileID: -5470090471511159829}
   IsRevivable: 0
   IsCollectable: 0
+  IsBurnable: 0
   ObjectType: 
   ObjectName: 
   IsDead: 0
@@ -191,3 +193,20 @@ MonoBehaviour:
   damagedSprite: {fileID: 0}
   deadSprite: {fileID: 0}
   cropGrowthSprites: []
+--- !u!114 &-6892040494927940483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200525463936766306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fd634b0196814eeabab6477a2d8f771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalRB: {fileID: 0}
+  speed: 0
+  choice: 0
+  frames: 0
+  randomFrames: 0

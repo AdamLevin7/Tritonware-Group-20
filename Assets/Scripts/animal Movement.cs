@@ -16,16 +16,18 @@ public class animalMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // idk what this is can DELETE if you want V
+
         animalObjectModel = GetComponentInParent<InteractionObjectModel>();
-        //Debug.Log(animalObjectModel);
-    
+        Debug.Log(animalObjectModel);
         Debug.Log(animalObjectModel.IsRunningAround);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(animalObjectModel.IsRunningAround == true)
+        if(animalObjectModel.IsRunningAround == true) //if thi is runing around is true the the animal will move
         {
         if(frames >randomFrames || randomFrames==0 )
         {
@@ -33,6 +35,7 @@ public class animalMovement : MonoBehaviour
             randomFrames =Random.Range(30,100);
             frames = 0;
         }
+        // four direction the animal will move
         if(choice ==4)
         {
             move(Vector2.right,speed);
