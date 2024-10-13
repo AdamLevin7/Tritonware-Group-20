@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WarpPls.unity
     guid: 5b7f52811776d47719008ff7cf02c555
+  - enabled: 1
+    path: Assets/Scenes/You Lost.unity
+    guid: f58c0244cfe414f3391159d3e023ae88
   m_configObjects: {}
