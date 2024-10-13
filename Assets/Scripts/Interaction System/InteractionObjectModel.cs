@@ -10,7 +10,7 @@ public class InteractionObjectModel : MonoBehaviour
     // General Properties
     public bool IsRevivable;
     public bool IsCollectable; 
-    
+    public bool IsBurnable;
     public string ObjectType; // ie Animal, Crop, Other
 
     public string ObjectName; // ie Cow, Wheat, etc.
