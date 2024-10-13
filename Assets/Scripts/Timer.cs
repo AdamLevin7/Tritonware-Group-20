@@ -15,6 +15,7 @@ public class Timer : MonoBehaviour
 
     public string loseScene;
 
+    public GameObject TimerObject;
     void Start (){
         time = startTime;
     }
@@ -30,5 +31,13 @@ public class Timer : MonoBehaviour
     }
     void lose(){
         SceneManager.LoadScene(loseScene);
+    }
+    void Awake(){
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("Barn Timer");
+       
+        if (objs.Length > 1){
+            Destroy(this.gameObject);
+        }
+        DontDestroyOnLoad(TimerObject);
     }
 }
