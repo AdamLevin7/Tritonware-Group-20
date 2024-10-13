@@ -321,6 +321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Timer
       objectReference: {fileID: 0}
+    - target: {fileID: 3091475246652966636, guid: 34112f4cf9ff342d2836734a3e4f3ab3, type: 3}
+      propertyPath: startTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4151459879341974950, guid: 34112f4cf9ff342d2836734a3e4f3ab3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -383,7 +387,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4151459879341974950, guid: 34112f4cf9ff342d2836734a3e4f3ab3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 8.4
+      value: 8.6
       objectReference: {fileID: 0}
     - target: {fileID: 4151459879341974950, guid: 34112f4cf9ff342d2836734a3e4f3ab3, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6092,7 +6096,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -13.7, y: 3.27, z: 0.033729643}
-  m_LocalScale: {x: 0.2271, y: 0.2271, z: 0.2271}
+  m_LocalScale: {x: 0.23, y: 0.23, z: 0.2271}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 868525160}
@@ -6282,8 +6286,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AGH: {fileID: 550026755}
+  canvas: {fileID: 1908150009}
   time: 0
-  timer: {fileID: 868525159}
+  AGHtimer: {fileID: 868525159}
+  overworldScene: Timer Test
 --- !u!4 &976905533
 Transform:
   m_ObjectHideFlags: 0
