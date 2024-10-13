@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventorySystem : MonoBehaviour
+public class InventoryModel : MonoBehaviour
 {
-    private static InventorySystem instance;
+    private static InventoryModel instance;
 
     // Called when the script instance is being loaded
     void Awake()

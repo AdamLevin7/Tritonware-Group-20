@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class InteractionController : MonoBehaviour
 {
-    public InventorySystem inventorySystem; // Reference to the inventory system
+    public InventoryModel inventoryModel; // Reference to the inventory model
     private InteractionObjectModel interactableObject = null;
 
     void Start()
     {
-        // Assuming your InventorySystem is attached to an object named "InventoryManager"
-        inventorySystem = GameObject.Find("InventoryHolder").GetComponent<InventorySystem>();
+        inventoryModel = GameObject.Find("InventoryHolder").GetComponent<InventoryModel>();
 
-        if (inventorySystem == null)
+        if (inventoryModel == null)
         {
-            Debug.LogError("InventorySystem not found! Make sure it is assigned.");
+            Debug.LogError("InventoryModel not found! Make sure it is assigned.");
         }
     }   
 
@@ -69,8 +68,8 @@ public class InteractionController : MonoBehaviour
             if (interactableObject.GetIsRevivable())
             {
                 Debug.Log("got revive");
-                // Attempt to revive using inventory system
-                if (inventorySystem.CheckReviveItemByName(interactableObject.GetObjectName()))
+                // Attempt to revive using inventory model
+                if (inventoryModel.CheckReviveItemByName(interactableObject.GetObjectName()))
                 {
                     interactableObject.SetIsDead(false);
                     Debug.Log($"{interactableObject.GetObjectName()} has been revived.");
@@ -80,8 +79,8 @@ public class InteractionController : MonoBehaviour
         // If not revivable, check if it's damaged
         else if (interactableObject.GetIsDamaged())
         {
-                // Attempt to heal using inventory system
-                if (inventorySystem.CheckHealItemByName(interactableObject.GetObjectName()))
+                // Attempt to heal using inventory model
+                if (inventoryModel.CheckHealItemByName(interactableObject.GetObjectName()))
                 {
                     interactableObject.SetIsDamaged(false);
                     Debug.Log($"{interactableObject.GetObjectName()} has been healed.");
@@ -94,14 +93,14 @@ public class InteractionController : MonoBehaviour
             if (interactableObject.GetObjectType() == "Crop" && interactableObject.GetGrowthStage() == 2)
             {
                 // Add item to inventory and reset growth stage
-                inventorySystem.AddItemByName(interactableObject.GetObjectName());
+                inventoryModel.AddItemByName(interactableObject.GetObjectName());
                 interactableObject.SetGrowthStage(0);
                 Debug.Log($"{interactableObject.GetObjectName()} has been harvested and its growth stage reset.");
             }
             // For non-crops, simply add the item to the inventory
             else if (interactableObject.GetObjectType() != "Crop")
             {
-                inventorySystem.AddItemByName(interactableObject.GetObjectName());
+                inventoryModel.AddItemByName(interactableObject.GetObjectName());
                 Debug.Log($"{interactableObject.GetObjectName()} has been collected.");
             }
         }
