@@ -34,6 +34,20 @@ public class InteractionController : MonoBehaviour
             interactableObject = null;
         }
     }
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        interactableObject = collider.gameObject.GetComponent<InteractionObjectModel>();
+    }
+
+    // This method is called when the player leaves the trigger zone
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        // When the player leaves the interaction zone, clear the interactable object reference
+        if (collider.gameObject.GetComponent<InteractionObjectModel>() != null)
+        {
+            interactableObject = null;
+        }
+    }
 
     // The Update method runs every frame
     void Update()
