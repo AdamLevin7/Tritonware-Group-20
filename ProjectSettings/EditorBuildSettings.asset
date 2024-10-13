@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/You Lost.unity
     guid: f58c0244cfe414f3391159d3e023ae88
+  - enabled: 1
+    path: Assets/Scenes/Timer Test.unity
+    guid: bd3e5f28ca04f47a79e303d1575ac08e
   m_configObjects: {}

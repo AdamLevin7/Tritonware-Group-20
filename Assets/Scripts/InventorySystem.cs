@@ -13,7 +13,7 @@ public class InventorySystem : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); // Keeps this object alive across scenes
+            DontDestroyOnLoad(this.gameObject); // Keeps this object alive across scenes
         }
         else
         {
