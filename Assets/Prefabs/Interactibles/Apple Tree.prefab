@@ -51,8 +51,9 @@ MonoBehaviour:
   collider2D: {fileID: -5470090471511159829}
   IsRevivable: 0
   IsCollectable: 0
-  ObjectType: 
-  ObjectName: 
+  IsBurnable: 0
+  ObjectType: Crop
+  ObjectName: AppleTree
   IsDead: 0
   IsDamaged: 0
   CropType: 

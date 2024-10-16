@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
 public class InteractionController : MonoBehaviour
 {
     public InventoryModel inventoryModel; // Reference to the inventory model
@@ -106,3 +107,4 @@ public class InteractionController : MonoBehaviour
         }
     }
 }
+*/
