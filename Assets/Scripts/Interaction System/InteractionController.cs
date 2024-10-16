@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
 public class InteractionController : MonoBehaviour
 {
     public InventoryModel inventoryModel; // Reference to the inventory model
@@ -94,17 +93,16 @@ public class InteractionController : MonoBehaviour
             if (interactableObject.GetObjectType() == "Crop" && interactableObject.GetGrowthStage() == 2)
             {
                 // Add item to inventory and reset growth stage
-                inventoryModel.AddItemByName(interactableObject.GetObjectName());
+                inventoryModel.AddItemByName(interactableObject.GetObjectName(), 1);
                 interactableObject.SetGrowthStage(0);
                 Debug.Log($"{interactableObject.GetObjectName()} has been harvested and its growth stage reset.");
             }
             // For non-crops, simply add the item to the inventory
             else if (interactableObject.GetObjectType() != "Crop")
             {
-                inventoryModel.AddItemByName(interactableObject.GetObjectName());
+                inventoryModel.AddItemByName(interactableObject.GetObjectName(), 1);
                 Debug.Log($"{interactableObject.GetObjectName()} has been collected.");
             }
         }
     }
 }
-*/

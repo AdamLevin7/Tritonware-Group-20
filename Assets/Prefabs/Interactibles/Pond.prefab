@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collider2D: {fileID: -5470090471511159829}
   IsRevivable: 0
-  IsCollectable: 0
+  IsCollectable: 1
   IsBurnable: 0
   ObjectType: 
   ObjectName: Pond

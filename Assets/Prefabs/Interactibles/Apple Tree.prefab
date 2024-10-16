@@ -49,9 +49,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collider2D: {fileID: -5470090471511159829}
-  IsRevivable: 0
-  IsCollectable: 0
-  IsBurnable: 0
+  IsRevivable: 1
+  IsCollectable: 1
+  IsBurnable: 1
   ObjectType: Crop
   ObjectName: AppleTree
   IsDead: 0

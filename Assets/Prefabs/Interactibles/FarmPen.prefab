@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: -5470090471511159829}
   - component: {fileID: 3956657876800506691}
   - component: {fileID: 4186607736806083353}
-  - component: {fileID: 2075904267498710332}
+  - component: {fileID: 7509779482929167860}
   m_Layer: 0
-  m_Name: Choppable Tree
+  m_Name: FarmPen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,10 +50,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collider2D: {fileID: -5470090471511159829}
   IsRevivable: 1
-  IsCollectable: 1
+  IsCollectable: 0
   IsBurnable: 1
-  ObjectType: Crop
-  ObjectName: ChoppableTree
+  ObjectType: 
+  ObjectName: FarmPen
   IsDead: 0
   IsDamaged: 0
   CropType: 
@@ -176,7 +176,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2075904267498710332
+--- !u!114 &7509779482929167860
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

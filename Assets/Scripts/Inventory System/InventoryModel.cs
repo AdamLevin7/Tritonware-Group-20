@@ -113,7 +113,7 @@ public class InventoryModel : MonoBehaviour
     public bool CheckReviveItemByName(string objectName)
     {
         // Wood check for repairing wooden object
-        if (new List<string> { "Barn", "ChoppableTree", "AppleTree" }.Contains(objectName))
+        if (new List<string> { "Barn", "ChoppableTree", "AppleTree", "FarmPen" }.Contains(objectName))
         {
             if (itemQuantities["wood"] >= 1)
             {
