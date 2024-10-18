@@ -57,7 +57,7 @@ public class InventoryModel : MonoBehaviour
         { "", "barbShot" }
     };
 
-    private void SetItemQuantity(string itemName, int newQuantity)
+    public void SetItemQuantity(string itemName, int newQuantity)
     {
         // Update the item quantity in the dictionary
         itemQuantities[itemName] = newQuantity;
