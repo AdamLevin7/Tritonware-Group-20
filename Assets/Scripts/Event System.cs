@@ -63,7 +63,8 @@ public class EventSystem : MonoBehaviour
         //AGHtimer.SetActive(true);
         Instantiate(AGHTimer, AGH.transform);
         AGHTimer.transform.position = AGH.transform.position + 
-            new Vector3(0.2f, 0.2f, 0);
+            new Vector3(2.0f, 1.5f, 0);
+        AGHTimer.GetComponent<SpriteRenderer>().sortingOrder = 3;
     }
     void animal(){
 
