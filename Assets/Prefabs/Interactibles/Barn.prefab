@@ -49,10 +49,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collider2D: {fileID: -5470090471511159829}
-  IsRevivable: 0
+  IsRevivable: 1
   IsCollectable: 0
+  IsBurnable: 1
   ObjectType: 
-  ObjectName: 
+  ObjectName: Barn
   IsDead: 0
   IsDamaged: 0
   CropType: 

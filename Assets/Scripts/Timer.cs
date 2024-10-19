@@ -38,7 +38,6 @@ public class Timer : MonoBehaviour
        
         if (objs.Length > 1){
             Destroy(this.gameObject);
-        }
-        DontDestroyOnLoad(TimerObject);
+        } 
     }
 }

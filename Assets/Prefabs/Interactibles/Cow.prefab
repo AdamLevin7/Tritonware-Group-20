@@ -53,8 +53,8 @@ MonoBehaviour:
   IsRevivable: 0
   IsCollectable: 0
   IsBurnable: 0
-  ObjectType: 
-  ObjectName: 
+  ObjectType: Animal
+  ObjectName: Cow
   IsDead: 0
   IsDamaged: 0
   CropType: 

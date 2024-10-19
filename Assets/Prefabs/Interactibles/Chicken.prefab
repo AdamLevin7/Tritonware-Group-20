@@ -54,7 +54,7 @@ MonoBehaviour:
   IsCollectable: 0
   IsBurnable: 0
   ObjectType: 
-  ObjectName: 
+  ObjectName: Chicken
   IsDead: 0
   IsDamaged: 0
   CropType: 

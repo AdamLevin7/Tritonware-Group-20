@@ -51,6 +51,7 @@ MonoBehaviour:
   collider2D: {fileID: -5470090471511159829}
   IsRevivable: 1
   IsCollectable: 1
+  IsBurnable: 1
   ObjectType: Crop
   ObjectName: Wheat
   IsDead: 0
