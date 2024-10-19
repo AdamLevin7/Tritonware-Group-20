@@ -9,6 +9,7 @@ public class InteractableHealth : MonoBehaviour
     public InventoryModel inventory;
     public string objectName;
     public bool interactable = false;
+    public EventSystem eventSystem;
     List<string> animals = new List<string> {"Horse","Cow", "Chicken"};
     void Start()
     {
@@ -32,22 +33,24 @@ public class InteractableHealth : MonoBehaviour
                     health--;
                     inventory.SetItemQuantity("wood", 
                     inventory.itemQuantities["wood"]-1);
+                    eventSystem.AGHEvent = false;
                  }
                  if(animals.Contains(objectName)
-                 &&inventory.itemQuantities["Wheat"] >= 1){
+                 &&inventory.itemQuantities["wheat"] >= 1){
                     health--;
-                    inventory.SetItemQuantity("wood", 
-                    inventory.itemQuantities["Wheat"]-1);
+                    inventory.SetItemQuantity("wheat", 
+                    inventory.itemQuantities["wheat"]-1);
+                    eventSystem.animalEvent = false;
                  }
             }  
         }
+        Debug.Log(inventory.itemQuantities["wheat"]);
         if (health <= 0){
             if (transform.GetChild(0).gameObject!= null){
                 Destroy(transform.GetChild(0).gameObject);
             }
             health = 1;
         }
-        Debug.Log(inventory.itemQuantities["wood"]);
     }
     private void OnTriggerEnter2D(Collider2D other) {
         interactable = true;
