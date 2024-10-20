@@ -550,6 +550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalRB: {fileID: 348935315}
+  animalSprite: {fileID: 0}
   speed: 30
   choice: 0
   frames: 0
@@ -6283,71 +6284,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &507446726
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -5470090471511159829, guid: dd41fb1180df14c11ab3d792bd6ec013, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 200525463936766306, guid: dd41fb1180df14c11ab3d792bd6ec013, type: 3}
-      propertyPath: m_Name
-      value: Wheat
-      objectReference: {fileID: 0}
-    - target: {fileID: 7147903379720757179, guid: dd41fb1180df14c11ab3d792bd6ec013, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.3089933
-      objectReference: {fileID: 0}
-    - target: {fileID: 7147903379720757179, guid: dd41fb1180df14c11ab3d792bd6ec013, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.8781161
-      objectReference: {fileID: 0}
-    - target: {fileID: 7147903379720757179, guid: dd41fb1180df14c11ab3d792bd6ec013, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7147903379720757179, guid: dd41fb1180df14c11ab3d792bd6ec013, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7147903379720757179, guid: dd41fb1180df14c11ab3d792bd6ec013, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7147903379720757179, guid: dd41fb1180df14c11ab3d792bd6ec013, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7147903379720757179, guid: dd41fb1180df14c11ab3d792bd6ec013, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7147903379720757179, guid: dd41fb1180df14c11ab3d792bd6ec013, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7147903379720757179, guid: dd41fb1180df14c11ab3d792bd6ec013, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7147903379720757179, guid: dd41fb1180df14c11ab3d792bd6ec013, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7932764180306022576, guid: dd41fb1180df14c11ab3d792bd6ec013, type: 3}
-      propertyPath: IsDead
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dd41fb1180df14c11ab3d792bd6ec013, type: 3}
 --- !u!1001 &645151864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8510,7 +8446,6 @@ SceneRoots:
   - {fileID: 1578636971}
   - {fileID: 1759387497}
   - {fileID: 1049777283}
-  - {fileID: 507446726}
   - {fileID: 1556582562}
   - {fileID: 645151864}
   - {fileID: 1930667496}
