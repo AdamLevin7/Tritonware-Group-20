@@ -530,13 +530,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 348935309}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.66, y: -113.93, z: 0.033729643}
-  m_LocalScale: {x: 0.40245, y: 0.40245, z: 0.8049}
+  m_LocalRotation: {x: -0.01177842, y: -0.07263397, z: 0.00085783936, w: 0.99728876}
+  m_LocalPosition: {x: 21.43, y: -114.27, z: 1.14}
+  m_LocalScale: {x: -0.41301066, y: 0.36753777, z: 0.73507553}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 976905533}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.339, y: -8.333, z: 0.196}
 --- !u!114 &348935314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,12 +549,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd634b0196814eeabab6477a2d8f771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 5
   animalRB: {fileID: 348935315}
   animalSprite: {fileID: 348935312}
   speed: 30
   choice: 0
   frames: 0
   randomFrames: 0
+  minBounds: {x: 11.75, y: -115.27}
+  maxBounds: {x: 38.14, y: -104.06}
 --- !u!50 &348935315
 Rigidbody2D:
   serializedVersion: 4
@@ -6730,13 +6733,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793358093}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.138073, y: -106.962456, z: 0.033729643}
+  m_LocalRotation: {x: -0, y: 0.01430231, z: -0, w: 0.9998977}
+  m_LocalPosition: {x: 21.19, y: -107.61, z: 0.03}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 976905533}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 1.639, z: 0}
 --- !u!1 &976905531
 GameObject:
   m_ObjectHideFlags: 0
@@ -8516,6 +8519,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1908150013}
     m_Modifications:
+    - target: {fileID: 887384778420474971, guid: 65bc0ef0e288d44928da289e9a11adc3, type: 3}
+      propertyPath: health
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 887384778420474971, guid: 65bc0ef0e288d44928da289e9a11adc3, type: 3}
       propertyPath: loseScene
       value: You Lost
