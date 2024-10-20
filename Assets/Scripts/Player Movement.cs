@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
+    public Animator animator;
+    public SpriteRenderer PlayerSprite;
     public Rigidbody2D PlayerRB;
     public int speed;
     // Start is called before the first frame update
@@ -56,5 +58,21 @@ public class PlayerControls : MonoBehaviour
     private void Move(Vector2 direction, int speed)
     {
         PlayerRB.velocity = direction.normalized * speed * Time.deltaTime * 100f;
+        if (PlayerRB.velocity == Vector2.zero)
+        {
+          animator.SetBool("Move",false);
+        }
+        else
+        {
+          animator.SetBool("Move",true);
+        }
+        if (PlayerRB.velocity[0] < 0)
+          {
+               PlayerSprite.flipX = true;
+          }
+        else if (PlayerRB.velocity[0] > 0)
+        {
+          PlayerSprite.flipX = false;
+        }
     }
 }
