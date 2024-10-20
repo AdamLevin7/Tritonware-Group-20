@@ -245,6 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBarText: {fileID: 1179017835}
   health: 100
+  isDead: 0
 --- !u!4 &388159542
 Transform:
   m_ObjectHideFlags: 0
