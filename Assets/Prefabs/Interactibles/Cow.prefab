@@ -206,6 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalRB: {fileID: 4186607736806083353}
+  animalSprite: {fileID: 3956657876800506691}
   speed: 2
   choice: 0
   frames: 0
