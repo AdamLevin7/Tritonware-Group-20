@@ -32,13 +32,13 @@ public class EventSystem : MonoBehaviour
     {
         barnTime -= Time.deltaTime;
         animalTime -= Time.deltaTime;
-        if (barnTime < 0 && !AGHEvent){
+        if (barnTime < 0){
             AHH();
             AGHEvent = true;
             barnTime = Random.Range(10.0f, 12.0f);
         }
 
-        if (animalTime < 0 && !animalEvent){
+        if (animalTime < 0){
             animal();
             animalEvent = true;
             animalTime = Random.Range(10.0f, 12.0f);

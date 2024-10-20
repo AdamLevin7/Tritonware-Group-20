@@ -16,8 +16,10 @@ public class Timer : MonoBehaviour
     public string loseScene;
 
     public GameObject TimerObject;
+    public GameObject healthBar;
     void Start (){
         time = startTime;
+        healthBar = GameObject.FindGameObjectWithTag("Health");
     }
     
     // Update is called once per frame
@@ -26,13 +28,10 @@ public class Timer : MonoBehaviour
         gameTimer= time;
        time -= Time.deltaTime;
        if(time <= 0.0f){
-        lose();
+        healthBar.GetComponent<ModifyHealthBar>().healthDamage(true);
         Destroy(this.gameObject);
        }
        StopWatch.fillAmount -= 1.0f / startTime * Time.deltaTime;
-    }
-    void lose(){
-        SceneManager.LoadScene(loseScene);
     }
     void Awake(){
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Barn Timer");
