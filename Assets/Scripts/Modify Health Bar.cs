@@ -21,7 +21,7 @@ public class ModifyHealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Timer.gameTimer !<0.0f){
+        if(Timer.gameTimer >0.0f){
             healthBarText.text = "Health: " + health;
         }
         
