@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6410129208796068379}
   - component: {fileID: 1040431672999804066}
   - component: {fileID: 7522397156820285102}
+  - component: {fileID: 5584544974828774433}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Untagged
@@ -31,8 +32,8 @@ Transform:
   m_GameObject: {fileID: 8424541474335424309}
   serializedVersion: 2
   m_LocalRotation: {x: -0.01177842, y: -0.07263397, z: 0.00085783936, w: 0.99728876}
-  m_LocalPosition: {x: 35.74, y: -112.49, z: 3.19}
-  m_LocalScale: {x: -0.75, y: 0.75, z: 0.73507553}
+  m_LocalPosition: {x: 8.981554, y: 8.425369, z: 3.19}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.73507553}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c3ceaacfcbb9044878fec9fc1a9eb41c, type: 3}
+  m_Sprite: {fileID: -1885861470, guid: 06f92e78e960646e5aa6d8faf8787919, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -125,7 +126,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.25, y: 2.25}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 7.68, y: 7.68}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -226,3 +227,19 @@ MonoBehaviour:
   IsRunningAround: 1
   objectID: 
   healthBarModifier: {fileID: 0}
+--- !u!114 &5584544974828774433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8424541474335424309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b46a5c9475d4c00ad5bd01689babde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSprite: {fileID: -1885861470, guid: 06f92e78e960646e5aa6d8faf8787919, type: 3}
+  damagedSprite: {fileID: 0}
+  deadSprite: {fileID: 0}
+  cropGrowthSprites: []
