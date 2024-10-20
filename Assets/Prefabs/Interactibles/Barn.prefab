@@ -190,6 +190,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSprite: {fileID: 21300000, guid: a18ce617ff79f41e0934ecf3fb3589b8, type: 3}
-  damagedSprite: {fileID: 0}
-  deadSprite: {fileID: 21300000, guid: 3d1c26bd37d234b95b0bf181e834d7dd, type: 3}
+  damagedSprite: {fileID: 21300000, guid: 55e878cf27bed449eb59b18c0979aca7, type: 3}
+  deadSprite: {fileID: 21300000, guid: aee3ec229b58643868360d8a22a3a6dd, type: 3}
   cropGrowthSprites: []
