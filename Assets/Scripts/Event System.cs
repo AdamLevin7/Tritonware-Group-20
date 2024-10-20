@@ -8,13 +8,18 @@ public class EventSystem : MonoBehaviour
     public GameObject AGH;
     public GameObject canvas;
     public GameObject Animal;
+    public GameObject Cow;
+    public GameObject Chicken;
     public float barnTime;
     public float animalTime;
+    public float cowTime;
+    public float chickenTime;
 
     public bool animalEvent;
+    public bool cowEvent;
+    public bool chickenEvent;
 
-    public GameObject timer;
-    public List<GameObject> timers = new List<GameObject> {null, null, null};
+    public List<GameObject> timers = new List<GameObject> {null, null, null, null};
     public bool AGHEvent = false;
     public string overworldScene;
     private bool overWorld = true;
@@ -25,6 +30,10 @@ public class EventSystem : MonoBehaviour
         AGH.SetActive(false);
         
         animalTime = Random.Range(2.0f, 4.0f);
+        
+        cowTime = Random.Range(2.0f, 4.0f);
+        
+        chickenTime = Random.Range(2.0f, 4.0f);
     }
 
     // Update is called once per frame
@@ -32,6 +41,8 @@ public class EventSystem : MonoBehaviour
     {
         barnTime -= Time.deltaTime;
         animalTime -= Time.deltaTime;
+        cowTime -= Time.deltaTime;
+        chickenTime -= Time.deltaTime;
         if (barnTime < 0){
             AHH();
             AGHEvent = true;
@@ -42,6 +53,17 @@ public class EventSystem : MonoBehaviour
             animal();
             animalEvent = true;
             animalTime = Random.Range(10.0f, 12.0f);
+        }
+        if (cowTime < 0){
+            cow();
+            cowEvent = true;
+            cowTime = Random.Range(10.0f, 12.0f);
+        }
+
+        if (chickenTime < 0){
+            chicken();
+            chickenEvent = true;
+            chickenTime = Random.Range(10.0f, 12.0f);
         }
 
         if(SceneManager.GetActiveScene().name != overworldScene && overWorld == true){
@@ -55,9 +77,13 @@ public class EventSystem : MonoBehaviour
             overWorld = true;
         }
         timers[0].transform.position = AGH.transform.position + 
-            new Vector3(10.0f, 5.0f, 0);
-        timers[0].transform.position = Animal.transform.position + 
-            new Vector3(10.0f, 5.0f, 0);
+            new Vector3(1.0f, 5.0f, 0);
+        timers[1].transform.position = Animal.transform.position + 
+            new Vector3(1.0f, 1.0f, 0);
+        timers[2].transform.position = Cow.transform.position + 
+            new Vector3(1.0f, 1.0f, 0);
+        timers[3].transform.position = Chicken.transform.position + 
+            new Vector3(1.0f, 1.0f, 0);
     }
 
     void AHH(){
@@ -66,12 +92,28 @@ public class EventSystem : MonoBehaviour
         Instantiate(timers[0], AGH.transform);
         timers[0].transform.position = AGH.transform.position + 
             new Vector3(10.0f, 5.0f, 0);
+        timers[0].transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
     }
     void animal(){
         timers[1].SetActive(true);
         Instantiate(timers[1], Animal.transform);
         timers[1].transform.position = Animal.transform.position + 
             new Vector3(10.0f, 5.0f, 0);
+        timers[1].transform.localScale = new Vector3(0.50f, 0.50f, 0.50f);
+    }
+    void cow(){
+        timers[2].SetActive(true);
+        Instantiate(timers[2], Cow.transform);
+        timers[2].transform.position = Cow.transform.position + 
+            new Vector3(10.0f, 5.0f, 0);
+        timers[2].transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+    }
+    void chicken(){
+        timers[3].SetActive(true);
+        Instantiate(timers[3], Chicken.transform);
+        timers[3].transform.position = Chicken.transform.position + 
+            new Vector3(10.0f, 5.0f, 0);
+        timers[3].transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
     }
     void Awake(){
         DontDestroyOnLoad(this.gameObject);
