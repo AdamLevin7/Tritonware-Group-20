@@ -44,7 +44,6 @@ public class InteractableHealth : MonoBehaviour
                  }
             }  
         }
-        Debug.Log(inventory.itemQuantities["wheat"]);
         if (health <= 0){
             if (transform.GetChild(0).gameObject!= null){
                 Destroy(transform.GetChild(0).gameObject);

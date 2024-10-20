@@ -54,14 +54,15 @@ public class EventSystem : MonoBehaviour
             if(timers[0] != null) timers[0].GetComponent<Renderer>().enabled = true;
             overWorld = true;
         }
+        timers[0].transform.position = AGH.transform.position + 
+            new Vector3(10.0f, 5.0f, 0);
+        timers[0].transform.position = Animal.transform.position + 
+            new Vector3(10.0f, 5.0f, 0);
     }
 
     void AHH(){
         AGH.SetActive(true);
         timers[0].SetActive(true);
-       // GameObject newTimer = Instantiate(timer, AGH.transform.position, AGH.transform.rotation);
-        //newTimer.SetActive(true);
-        //AGHtimer.SetActive(true);
         Instantiate(timers[0], AGH.transform);
         timers[0].transform.position = AGH.transform.position + 
             new Vector3(10.0f, 5.0f, 0);
