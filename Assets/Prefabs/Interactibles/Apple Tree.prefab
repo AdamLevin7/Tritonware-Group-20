@@ -62,6 +62,7 @@ MonoBehaviour:
   AnimalType: 
   IsRunningAround: 0
   objectID: 
+  healthBarModifier: {fileID: 0}
 --- !u!70 &-5470090471511159829
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -138,7 +139,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: cc64dc35516d847a1b601906cb897940, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -188,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1b46a5c9475d4c00ad5bd01689babde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSprite: {fileID: 0}
+  defaultSprite: {fileID: 21300000, guid: cc64dc35516d847a1b601906cb897940, type: 3}
   damagedSprite: {fileID: 0}
-  deadSprite: {fileID: 0}
+  deadSprite: {fileID: 21300000, guid: 39b9df20b815f45e08683509bb957517, type: 3}
   cropGrowthSprites: []
