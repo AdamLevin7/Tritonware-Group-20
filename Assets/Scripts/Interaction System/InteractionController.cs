@@ -5,6 +5,7 @@ using UnityEngine;
 public class InteractionController : MonoBehaviour
 {
     public InventoryModel inventoryModel; // Reference to the inventory model
+
     private InteractionObjectModel interactableObject = null;
 
     void Start()

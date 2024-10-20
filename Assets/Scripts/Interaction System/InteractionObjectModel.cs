@@ -32,6 +32,8 @@ public class InteractionObjectModel : MonoBehaviour
     public string objectID;
     private static int idCounter = 0;
 
+    public ModifyHealthBar healthBarModifier; 
+
     void Awake()
     {
         if (string.IsNullOrEmpty(objectID))
@@ -51,6 +53,7 @@ public class InteractionObjectModel : MonoBehaviour
     // Setter Methods General States
     public void SetIsDead(bool state)
     {
+        healthBarModifier.healthDamage(state);
         IsDead = state;
         if (interactionView != null)
         {
@@ -74,6 +77,7 @@ public class InteractionObjectModel : MonoBehaviour
         {
             // Additional logic for when the object is damaged
             Debug.Log($"{ObjectName} is damaged and needs attention.");
+            
         }
     }
 

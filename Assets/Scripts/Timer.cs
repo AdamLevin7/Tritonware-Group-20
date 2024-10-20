@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     public float startTime = 60.0f;
     private float time;
-
+    public static float gameTimer;
     public Image StopWatch;
 
     public string loseScene;
@@ -23,6 +23,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gameTimer= time;
        time -= Time.deltaTime;
        if(time <= 0.0f){
         lose();
