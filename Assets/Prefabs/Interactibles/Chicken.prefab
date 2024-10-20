@@ -63,6 +63,7 @@ MonoBehaviour:
   AnimalType: 
   IsRunningAround: 0
   objectID: 
+  healthBarModifier: {fileID: 0}
 --- !u!70 &-5470090471511159829
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -191,7 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultSprite: {fileID: -1885861470, guid: 06f92e78e960646e5aa6d8faf8787919, type: 3}
   damagedSprite: {fileID: 0}
-  deadSprite: {fileID: 0}
+  deadSprite: {fileID: 21300000, guid: 7f137b891c36c44de9e1f9f0d403044a, type: 3}
   cropGrowthSprites: []
 --- !u!114 &429736270804312943
 MonoBehaviour:
@@ -205,9 +206,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd634b0196814eeabab6477a2d8f771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 5
   animalRB: {fileID: 4186607736806083353}
   animalSprite: {fileID: 3956657876800506691}
   speed: 2
   choice: 0
   frames: 0
   randomFrames: 0
+  minBounds: {x: 0, y: 0}
+  maxBounds: {x: 0, y: 0}
