@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ModifyHealthBar : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class ModifyHealthBar : MonoBehaviour
     //public InteractionObjectModel gameObjectModel;
 
     public bool isDead;
+    public string loseScene;
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +24,18 @@ public class ModifyHealthBar : MonoBehaviour
     void Update()
     {
         if(Timer.gameTimer >0.0f){
+            
+        //test to see if health bar changes
+            if(Input.GetKey(KeyCode.H))
+            {
+                health = health-5;
+            }
+            if(health <= 0)
+            {
+                SceneManager.LoadScene(loseScene);
+            }
             healthBarText.text = "Health: " + health;
         }
-        
     }
     public void healthDamage(bool state)
     {
