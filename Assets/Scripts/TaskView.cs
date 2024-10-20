@@ -9,6 +9,7 @@ public class TaskView : MonoBehaviour
     public GameObject taskTemplate;  // Prefab for the task UI
     public GameObject popupTemplate; // Prefab for the popup UI
     public Transform scrollableContent; // Parent object for the scrollable UI content
+    public Transform popupContent; // Parent object for the scrollable UI content
     public float popupDuration = 3f; // Time before the popup disappears
 
     // Preset messages dictionary based on object names
@@ -123,7 +124,7 @@ public class TaskView : MonoBehaviour
         string popupMessage = presetMessages[objectName];
 
         // Instantiate and set the popup UI
-        GameObject popupUI = Instantiate(popupTemplate, transform);
+        GameObject popupUI = Instantiate(popupTemplate, popupContent);
         popupUI.transform.Find("PopupText").GetComponent<TextMeshProUGUI>().text = popupMessage;
         
         activePopups.Add(popupUI);
