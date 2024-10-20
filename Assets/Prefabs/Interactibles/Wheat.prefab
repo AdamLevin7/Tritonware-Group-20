@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 200525463936766306}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.21650589, y: 8.283637, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -94,8 +94,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Offset: {x: -0.00000008940697, y: -0.019589186}
+  m_Size: {x: 0.8917847, y: 1.0391784}
   m_Direction: 0
 --- !u!212 &3956657876800506691
 SpriteRenderer:
@@ -137,8 +137,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 154d25487848c4037b71645e76e40551, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -188,10 +188,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1b46a5c9475d4c00ad5bd01689babde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSprite: {fileID: 0}
-  damagedSprite: {fileID: 0}
-  deadSprite: {fileID: 21300000, guid: 4d3d2b0b50e67440c803c515d6c75092, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 154d25487848c4037b71645e76e40551, type: 3}
+  damagedSprite: {fileID: 21300000, guid: 7988d5a94f2e745a39dd61690408bbda, type: 3}
+  deadSprite: {fileID: 21300000, guid: 2e448ea1c52db46c18c1de43d8b7f57f, type: 3}
   cropGrowthSprites:
-  - {fileID: 21300000, guid: 2cf28536ec3e6400bbedb63d3f5b5502, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: def3f0004b8b044149aaa19353441948, type: 3}
+  - {fileID: 21300000, guid: 68e2b8d9b6bda40e38d61544a41941f8, type: 3}
+  - {fileID: 21300000, guid: 154d25487848c4037b71645e76e40551, type: 3}

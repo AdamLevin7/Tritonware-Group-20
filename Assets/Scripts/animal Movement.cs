@@ -5,6 +5,7 @@ using UnityEngine;
 public class animalMovement : MonoBehaviour
 {
     public Rigidbody2D animalRB;
+    public SpriteRenderer animalSprite;
     public int speed;
     public int choice;
     public int frames =0;
@@ -66,5 +67,13 @@ public class animalMovement : MonoBehaviour
     private void move(Vector2 direction, int speed)
     {
         animalRB.velocity = direction.normalized * speed * Time.deltaTime * 100f;
+        if (animalRB.velocity[0] > 0)
+          {
+               animalSprite.flipX = true;
+          }
+        else if (animalRB.velocity[0] < 0)
+        {
+          animalSprite.flipX = false;
+        }
     }
 }
