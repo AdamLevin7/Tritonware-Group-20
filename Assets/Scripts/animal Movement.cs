@@ -16,10 +16,9 @@ public class animalMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // idk what this is can DELETE if you want V
-
-        animalObjectModel = GetComponentInParent<InteractionObjectModel>();
-        Debug.Log(animalObjectModel);
+        animalObjectModel = GetComponent<InteractionObjectModel>();
+        //Debug.Log(animalObjectModel);
+    
         Debug.Log(animalObjectModel.IsRunningAround);
 
     }
