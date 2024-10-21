@@ -95,7 +95,7 @@ public class InteractionController : MonoBehaviour
             {
                 // Add item to inventory and reset growth stage
                 inventoryModel.AddItemByName(interactableObject.GetObjectName(), 1);
-                interactableObject.SetGrowthStage(0);
+                interactableObject.SetGrowthStage(2);
                 Debug.Log($"{interactableObject.GetObjectName()} has been harvested and its growth stage reset.");
             }
             // For non-crops, simply add the item to the inventory
