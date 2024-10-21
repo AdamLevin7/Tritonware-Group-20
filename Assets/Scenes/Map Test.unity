@@ -2871,7 +2871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7ee5bc1f55344d7d9f96cbf52659d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTime: 10
+  startTime: 25
   StopWatch: {fileID: 769590888}
 --- !u!1001 &784449665
 PrefabInstance:
@@ -17868,8 +17868,8 @@ MonoBehaviour:
   uiCanvas: {fileID: 609604463}
   excludedObjectNames:
   - Pond
-  respawnInterval: 5
-  creationChance: 0.03
+  respawnInterval: 2
+  creationChance: 0.5
 --- !u!4 &1973418117
 Transform:
   m_ObjectHideFlags: 0
