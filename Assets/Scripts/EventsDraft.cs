@@ -34,7 +34,7 @@ public class EventsDraft : MonoBehaviour
                 if (Random.value <= creationChance)
                 {
                 // Initialize timers for each object with a random time
-                objectTimers[objectID] = Random.Range(10.0f, 12.0f); // Set a random initial time
+                objectTimers[objectID] = Random.Range(15.0f, 30.0f); // Set a random initial time
 
                 // Instantiate Timer prefab and link to object
                 GameObject timerUI = Instantiate(timerPrefab, uiCanvas.transform); // Instantiate under the UI Canvas
