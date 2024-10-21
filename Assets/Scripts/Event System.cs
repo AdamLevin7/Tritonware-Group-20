@@ -77,13 +77,13 @@ public class EventSystem : MonoBehaviour
             overWorld = true;
         }
         timers[0].transform.position = AGH.transform.position + 
-            new Vector3(1.0f, 5.0f, 0);
+            new Vector3(4.0f, 5.0f, 0);
         timers[1].transform.position = Animal.transform.position + 
-            new Vector3(1.0f, 1.0f, 0);
+            new Vector3(-1.0f, 1.0f, 0);
         timers[2].transform.position = Cow.transform.position + 
-            new Vector3(1.0f, 1.0f, 0);
+            new Vector3(-37.0f, 1.0f, 0);
         timers[3].transform.position = Chicken.transform.position + 
-            new Vector3(1.0f, 1.0f, 0);
+            new Vector3(-9.5f, 1.0f, 0);
     }
 
     void AHH(){
@@ -99,21 +99,21 @@ public class EventSystem : MonoBehaviour
         Instantiate(timers[1], Animal.transform);
         timers[1].transform.position = Animal.transform.position + 
             new Vector3(10.0f, 5.0f, 0);
-        timers[1].transform.localScale = new Vector3(0.50f, 0.50f, 0.50f);
+        timers[1].transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
     }
     void cow(){
         timers[2].SetActive(true);
         Instantiate(timers[2], Cow.transform);
         timers[2].transform.position = Cow.transform.position + 
             new Vector3(10.0f, 5.0f, 0);
-        timers[2].transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+        timers[2].transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
     }
     void chicken(){
         timers[3].SetActive(true);
         Instantiate(timers[3], Chicken.transform);
         timers[3].transform.position = Chicken.transform.position + 
             new Vector3(10.0f, 5.0f, 0);
-        timers[3].transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+        timers[3].transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
     }
     void Awake(){
         DontDestroyOnLoad(this.gameObject);
