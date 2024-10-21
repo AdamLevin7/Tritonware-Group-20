@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer1 : MonoBehaviour
 {
@@ -31,6 +32,10 @@ public class Timer1 : MonoBehaviour
         if (time <= 0.0f)
         {
             Debug.Log("Timer Completed"); // This can remain for debugging
+            if(this.gameObject.CompareTag("GameTimer"))
+            {
+                SceneManager.LoadScene("You Win");
+            }
             Destroy(this.gameObject); // Destroy the timer object
         }
     }
