@@ -12,6 +12,9 @@ public class EventsDraft : MonoBehaviour
     public Canvas uiCanvas;         // Reference to the UI Canvas
     private ModifyHealthBar healthBar; // Reference to ModifyHealthBar
 
+    // List of object names to exclude from having timers
+    public List<string> excludedObjectNames = new List<string>(); // Add names in the Inspector
+
     void Start()
     {
         // Initialize the interactableObjects dictionary
@@ -20,18 +23,27 @@ public class EventsDraft : MonoBehaviour
             string objectID = interactionObject.objectID;
             interactableObjects.Add(objectID, interactionObject.gameObject);
 
-            // Initialize timers for each object with a random time
-            objectTimers[objectID] = Random.Range(10.0f, 12.0f); // Set a random initial time
+            // Check if the objectName is in the excluded list
+            if (!excludedObjectNames.Contains(interactionObject.ObjectName))
+            {
+                // Initialize timers for each object with a random time
+                objectTimers[objectID] = Random.Range(10.0f, 12.0f); // Set a random initial time
 
-            // Instantiate Timer prefab and link to object
-            GameObject timerUI = Instantiate(timerPrefab, uiCanvas.transform); // Instantiate under the UI Canvas
-            timerUI.GetComponent<Timer1>().startTime = objectTimers[objectID];
-            objectTimersUI.Add(objectID, timerUI);
+                // Instantiate Timer prefab and link to object
+                GameObject timerUI = Instantiate(timerPrefab, uiCanvas.transform); // Instantiate under the UI Canvas
+                timerUI.GetComponent<Timer1>().startTime = objectTimers[objectID];
+                objectTimersUI.Add(objectID, timerUI);
 
-            timerUI.transform.localScale = new Vector3(2.0f, 2.0f, 1); // Scale up if necessary
+                timerUI.transform.localScale = new Vector3(2.0f, 2.0f, 1); // Scale up if necessary
 
-            // Set the initial position of the timer UI
-            timerUI.transform.localPosition = new Vector3(4.0f, 5.0f, 0); // Adjust based on your UI layout
+                // Set the initial position of the timer UI
+                timerUI.transform.localPosition = new Vector3(4.0f, 5.0f, 0); // Adjust based on your UI layout
+            }
+            else
+            {
+                // Log excluded objects if needed
+                Debug.Log($"Excluding timer for object: {interactionObject.ObjectName}");
+            }
         }
 
         // Find the health bar in the scene
@@ -82,13 +94,16 @@ public class EventsDraft : MonoBehaviour
                 objectTimersUI.Remove(objectID);
             }
 
-            // Create a new timer instance for the object
-            objectTimers[objectID] = Random.Range(10.0f, 12.0f); // Reset the timer value
-            GameObject newTimerUI = Instantiate(timerPrefab, uiCanvas.transform); // Instantiate under the UI Canvas
-            newTimerUI.GetComponent<Timer1>().startTime = objectTimers[objectID];
-            objectTimersUI.Add(objectID, newTimerUI); // Add the new timer to the dictionary
+            // Create a new timer instance for the object if it is not excluded
+            if (!excludedObjectNames.Contains(interactableObjects[objectID].GetComponent<InteractionObjectModel>().ObjectName))
+            {
+                objectTimers[objectID] = Random.Range(10.0f, 12.0f); // Reset the timer value
+                GameObject newTimerUI = Instantiate(timerPrefab, uiCanvas.transform); // Instantiate under the UI Canvas
+                newTimerUI.GetComponent<Timer1>().startTime = objectTimers[objectID];
+                objectTimersUI.Add(objectID, newTimerUI); // Add the new timer to the dictionary
 
-            newTimerUI.transform.localPosition = new Vector3(4.0f, 5.0f, 0); // Adjust based on your UI layout
+                newTimerUI.transform.localPosition = new Vector3(4.0f, 5.0f, 0); // Adjust based on your UI layout
+            }
         }
 
         completedObjects.Clear();

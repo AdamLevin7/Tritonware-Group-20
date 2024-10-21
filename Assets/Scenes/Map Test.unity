@@ -2730,7 +2730,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228361941734944193, guid: 65bc0ef0e288d44928da289e9a11adc3, type: 3}
       propertyPath: m_TagString
-      value: Health
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6607121675699601163, guid: 65bc0ef0e288d44928da289e9a11adc3, type: 3}
       propertyPath: m_Pivot.x
@@ -2798,11 +2798,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6607121675699601163, guid: 65bc0ef0e288d44928da289e9a11adc3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1598.1272
+      value: 1982
       objectReference: {fileID: 0}
     - target: {fileID: 6607121675699601163, guid: 65bc0ef0e288d44928da289e9a11adc3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -885.1893
+      value: -887
       objectReference: {fileID: 0}
     - target: {fileID: 6607121675699601163, guid: 65bc0ef0e288d44928da289e9a11adc3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3349,7 +3349,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startTime: 60
   StopWatch: {fileID: 769590888}
-  loseScene: You Lost
 --- !u!1001 &1473189015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17851,6 +17850,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerPrefab: {fileID: 2480337327665420018, guid: 5abed8fc19b244ec9adafda50fea1a7a, type: 3}
   uiCanvas: {fileID: 609604463}
+  excludedObjectNames:
+  - Pond
 --- !u!4 &1973418117
 Transform:
   m_ObjectHideFlags: 0
