@@ -191,9 +191,9 @@ public class InventoryModel : MonoBehaviour
     //For testing
     public void Update()
     {
-        if (Input.GetKeyUp(KeyCode.E))
+      /*  if (Input.GetKeyUp(KeyCode.E))
         {
             AddItemByName("Pond", 10);
-        }
+        }*/
     }
 }
