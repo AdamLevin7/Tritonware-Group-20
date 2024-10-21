@@ -1,53 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.Events;
 
 public class ModifyHealthBar : MonoBehaviour
 {
     public int health = 100;
-
-    //public InteractionObjectModel gameObjectModel;
+    public Image HealthBar; // Assign this to the Health UI Image in the Inspector
     public string loseScene;
-    public bool isDead;
-    public GameObject HealthObject;
-    public Image HealthBar;
-    
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if(health <= 0.0f){
-            lose();
-            Destroy(this.gameObject);
-       }
-       HealthBar.fillAmount = (float)(health/100f);
-       
-        
+        if (health <= 0)
+        {
+            LoseGame();
+        }
+        UpdateHealthBar();
     }
+
     public void healthDamage(bool state)
     {
-        if(state == true)
+        if (state)
         {
-            health = health-20;
+            health -= 20;
+            Debug.Log($"Damaged health by 20. Current health: {health}");
         }
-        else if(state == false)
+        else
         {
-            health = health+20;
+            health += 20;
+            Debug.Log($"Restored health by 20. Current health: {health}");
         }
-        
-        
+        UpdateHealthBar();
     }
-    void lose(){
+
+    private void UpdateHealthBar()
+    {
+        if (HealthBar != null)
+        {
+            HealthBar.fillAmount = health / 100f; // Ensure fill amount is based on current health
+        }
+    }
+
+    private void LoseGame()
+    {
         SceneManager.LoadScene(loseScene);
     }
 }
