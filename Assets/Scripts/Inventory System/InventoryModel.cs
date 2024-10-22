@@ -40,8 +40,8 @@ public class InventoryModel : MonoBehaviour
     // Define maximum quantities for certain item names
     public Dictionary<string, int> maxItemQuantities = new Dictionary<string, int>
     {
-        { "water", 1000 },
-        { "apple", 10 },
+        { "water", 7 },
+        { "apple", 5 },
         { "wheat", 5 },
         { "wood", 5 },
         { "barbShot", 1 }

@@ -28,7 +28,7 @@ public class ModifyHealthBar : MonoBehaviour
         }
         else
         {
-            health += 10;
+            health += 7;
             Debug.Log($"Restored health by 20. Current health: {health}");
         }
         UpdateHealthBar();
