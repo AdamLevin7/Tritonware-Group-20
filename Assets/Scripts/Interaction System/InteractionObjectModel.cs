@@ -53,7 +53,6 @@ public class InteractionObjectModel : MonoBehaviour
     // Setter Methods General States
     public void SetIsDead(bool state)
     {
-        healthBarModifier.healthDamage(state);
         IsDead = state;
         if (interactionView != null)
         {

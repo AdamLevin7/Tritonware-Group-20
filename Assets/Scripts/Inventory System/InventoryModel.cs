@@ -14,7 +14,7 @@ public class InventoryModel : MonoBehaviour
     void Awake()
     {
         // Ensure there is only one instance of InventorySystem and it persists between scenes
-        if (instance == null)
+        /*if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject); // Keeps this object alive across scenes
@@ -22,7 +22,7 @@ public class InventoryModel : MonoBehaviour
         else
         {
             Destroy(gameObject); // Destroys duplicate instances of the InventoryManager
-        }
+        }*/
 
         // Initializes inventory items with default amounts
         itemQuantities["water"] = 0;

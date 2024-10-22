@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4151459879341974950}
   - component: {fileID: 3642663663262712808}
   - component: {fileID: 768894384510346872}
-  - component: {fileID: 3091475246652966636}
   - component: {fileID: -4563971945483920900}
+  - component: {fileID: -3456040247838885977}
   m_Layer: 5
-  m_Name: Timer
+  m_Name: Timer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,23 +77,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3091475246652966636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2480337327665420018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6efb10b6a494c4f19a18a2aa07d8fa82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startTime: 5
-  StopWatch: {fileID: 768894384510346872}
-  loseScene: You Lost
-  TimerObject: {fileID: 2480337327665420018}
-  healthBar: {fileID: 0}
 --- !u!212 &-4563971945483920900
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -146,3 +129,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-3456040247838885977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2480337327665420018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7ee5bc1f55344d7d9f96cbf52659d31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startTime: 60
+  StopWatch: {fileID: 768894384510346872}
+  loseScene: You Lost
+  TimerObject: {fileID: 2480337327665420018}
+  healthBar: {fileID: 5228361941734944193, guid: 65bc0ef0e288d44928da289e9a11adc3, type: 3}
