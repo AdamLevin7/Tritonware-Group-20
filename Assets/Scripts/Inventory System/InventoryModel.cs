@@ -42,8 +42,8 @@ public class InventoryModel : MonoBehaviour
     {
         { "water", 1000 },
         { "apple", 10 },
-        { "wheat", 1 },
-        { "wood", 1 },
+        { "wheat", 5 },
+        { "wood", 5 },
         { "barbShot", 1 }
     };
 

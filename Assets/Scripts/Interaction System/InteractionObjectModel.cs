@@ -32,7 +32,7 @@ public class InteractionObjectModel : MonoBehaviour
     public string objectID;
     private static int idCounter = 0;
 
-    public ModifyHealthBar healthBarModifier; 
+    public ModifyHealthBar healthBar; 
 
     void Awake()
     {
@@ -62,6 +62,11 @@ public class InteractionObjectModel : MonoBehaviour
         {
             // Additional logic for when the object is dead (ie disable interaction)
             Debug.Log($"{ObjectName} is now dead.");
+        }
+        if (state == false)
+        {
+            // Additional logic for when the object is dead (ie disable interaction)
+            healthBar.healthDamage(false);
         }
     }
 
@@ -115,6 +120,7 @@ public class InteractionObjectModel : MonoBehaviour
     public bool GetIsRunningAround() => IsRunningAround;
     void Start()
     {
+        healthBar = FindObjectOfType<ModifyHealthBar>();
         collider2D = GetComponent<Collider2D>(); // Initialize 2D Collider
         interactionView = GetComponent<InteractionView>();
         if (interactionView != null)

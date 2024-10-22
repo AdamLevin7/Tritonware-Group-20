@@ -75,7 +75,7 @@ public class InteractionView : MonoBehaviour
             growthStage = Mathf.Clamp(growthStage, 0, cropGrowthSprites.Length - 1);
 
             // Render the appropriate growth stage sprite
-            spriteRenderer.sprite = cropGrowthSprites[growthStage];
+            spriteRenderer.sprite = cropGrowthSprites[2];
             Debug.Log($"{interactionObjectModel.GetObjectName()} sprite set to growth stage {growthStage}.");
         }
         else
