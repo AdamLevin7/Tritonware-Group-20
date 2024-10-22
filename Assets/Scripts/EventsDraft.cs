@@ -155,24 +155,36 @@ public class EventsDraft : MonoBehaviour
         }
     }
 
+    // Handles events for objects when their timer reaches zero
     void HandleEvent(string objectID)
     {
         Debug.Log($"Event triggered for objectID: {objectID}");
 
         GameObject obj = interactableObjects[objectID];
+
+        // Check if the InteractionObjectModel script is present
+        InteractionObjectModel interactionObject = obj.GetComponent<InteractionObjectModel>();
+        if (interactionObject != null)
+        {
+            interactionObject.SetIsDead(true); // Mark the object as dead
+            Debug.Log($"{interactionObject.ObjectName} is now dead.");
+        }
+
+        // Apply damage to health bar
         if (healthBar != null)
         {
-            healthBar.healthDamage(true); 
+            healthBar.healthDamage(true); // Damaging health directly from EventsDraft
             Debug.Log("Damaged health due to timer completion.");
         }
 
+        // Reactivate and reset the timer UI if needed
         if (objectTimersUI.ContainsKey(objectID))
         {
             GameObject timerUI = objectTimersUI[objectID];
             if (timerUI != null)
             {
                 timerUI.SetActive(true);
-                timerUI.GetComponent<Timer1>().startTime = Random.Range(10.0f, 12.0f);
+                timerUI.GetComponent<Timer1>().startTime = Random.Range(10.0f, 12.0f); // Resetting the Timer script start time
             }
         }
     }

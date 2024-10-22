@@ -57,11 +57,12 @@ MonoBehaviour:
   IsDead: 0
   IsDamaged: 0
   CropType: Wheat
-  GrowthStage: 0
+  GrowthStage: 2
   GrowthRate: 10
   AnimalType: 
   IsRunningAround: 0
   objectID: 
+  healthBarModifier: {fileID: 0}
 --- !u!70 &-5470090471511159829
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
