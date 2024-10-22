@@ -67,6 +67,7 @@ public class InteractionObjectModel : MonoBehaviour
         {
             // Additional logic for when the object is dead (ie disable interaction)
             healthBar.healthDamage(false);
+            IsDamaged = false;
         }
     }
 
