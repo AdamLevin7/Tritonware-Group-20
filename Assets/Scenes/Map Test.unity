@@ -2943,6 +2943,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 110220299}
     m_Modifications:
     - target: {fileID: 887384778420474971, guid: 65bc0ef0e288d44928da289e9a11adc3, type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 887384778420474971, guid: 65bc0ef0e288d44928da289e9a11adc3, type: 3}
       propertyPath: loseScene
       value: You Lost
       objectReference: {fileID: 0}
