@@ -132,24 +132,23 @@ public class EventsDraft : MonoBehaviour
                     objectTimersUI.Remove(objectID);
                 }
                 objectTimers.Remove(objectID);
-                Debug.Log($"Timer for objectID {objectID} was removed because it is no longer damaged.");
+                //Debug.Log($"Timer for objectID {objectID} was removed because it is no longer damaged.");
                 continue;
             }
 
             if (!excludedObjectNames.Contains(interactableObjects[objectID].GetComponent<InteractionObjectModel>().ObjectName) && !interactableObjects[objectID].CompareTag("Player"))
             {
-                if (!objectTimers.ContainsKey(objectID) && !objectTimersUI.ContainsKey(objectID))
+                if (!objectTimersUI.ContainsKey(objectID))
                 {
-                    if (Random.value <= creationChance)
-                    {
-                        objectTimers[objectID] = (Random.Range(10.0f, 12.0f), false); // Reset the timer value and mark as not completed
-                        GameObject newTimerUI = Instantiate(timerPrefab, uiCanvas.transform);
-                        newTimerUI.GetComponent<Timer1>().startTime = objectTimers[objectID].time;
-                        objectTimersUI.Add(objectID, newTimerUI);
+                    
+                    objectTimers[objectID] = (Random.Range(10.0f, 12.0f), false); // Reset the timer value and mark as not completed
+                    GameObject newTimerUI = Instantiate(timerPrefab, uiCanvas.transform);
+                    newTimerUI.GetComponent<Timer1>().startTime = objectTimers[objectID].time;
+                    objectTimersUI.Add(objectID, newTimerUI);
 
-                        newTimerUI.transform.localPosition = new Vector3(4.0f, 5.0f, 0); 
-                        interactableObjects[objectID].GetComponent<InteractionObjectModel>().SetIsDamaged(true);
-                    }
+                    newTimerUI.transform.localPosition = new Vector3(4.0f, 5.0f, 0); 
+                    interactableObjects[objectID].GetComponent<InteractionObjectModel>().SetIsDamaged(true);
+                    
                 }
             }
         }
