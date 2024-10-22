@@ -23,7 +23,7 @@ public class ModifyHealthBar : MonoBehaviour
     {
         if (state)
         {
-            health -= 20;
+            health -= 1;
             Debug.Log($"Damaged health by 20. Current health: {health}");
         }
         else
