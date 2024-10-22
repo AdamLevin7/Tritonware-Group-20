@@ -114,46 +114,58 @@ public class EventsDraft : MonoBehaviour
         completedObjects.Clear();
     }
 
-    private void RespawnTimers()
+private void RespawnTimers()
+{
+    foreach (var objectID in interactableObjects.Keys)
     {
-        foreach (var objectID in interactableObjects.Keys)
-        {
-            InteractionObjectModel interactionObject = interactableObjects[objectID].GetComponent<InteractionObjectModel>();
+        InteractionObjectModel interactionObject = interactableObjects[objectID].GetComponent<InteractionObjectModel>();
 
-            if (interactionObject != null && !interactionObject.GetIsDamaged())
+        // If the object is not damaged, we can respawn a timer for it
+        if (interactionObject != null && !interactionObject.GetIsDamaged() == true)
+        {
+            // Remove the existing UI timer if it exists
+            if (objectTimersUI.ContainsKey(objectID))
             {
-                if (objectTimersUI.ContainsKey(objectID))
+                GameObject timerUI = objectTimersUI[objectID];
+                if (timerUI != null)
                 {
-                    GameObject timerUI = objectTimersUI[objectID];
-                    if (timerUI != null)
-                    {
-                        Destroy(timerUI); 
-                    }
-                    objectTimersUI.Remove(objectID);
+                    Destroy(timerUI);
+                    interactionObject.SetIsDamaged(false); 
                 }
-                objectTimers.Remove(objectID);
-                Debug.Log($"Timer for objectID {objectID} was removed because it is no longer damaged.");
-                continue;
+                objectTimersUI.Remove(objectID);
             }
 
-            if (!excludedObjectNames.Contains(interactableObjects[objectID].GetComponent<InteractionObjectModel>().ObjectName) && !interactableObjects[objectID].CompareTag("Player"))
-            {
-                if (!objectTimers.ContainsKey(objectID) && !objectTimersUI.ContainsKey(objectID))
-                {
-                    if (Random.value <= creationChance)
-                    {
-                        objectTimers[objectID] = (Random.Range(10.0f, 12.0f), false); // Reset the timer value and mark as not completed
-                        GameObject newTimerUI = Instantiate(timerPrefab, uiCanvas.transform);
-                        newTimerUI.GetComponent<Timer1>().startTime = objectTimers[objectID].time;
-                        objectTimersUI.Add(objectID, newTimerUI);
+            // Remove the timer from the dictionary
+            objectTimers.Remove(objectID);
+            Debug.Log($"Timer for objectID {objectID} was removed because it is no longer damaged.");
+            continue; // Skip to the next object
+        }
 
-                        newTimerUI.transform.localPosition = new Vector3(4.0f, 5.0f, 0); 
-                        interactableObjects[objectID].GetComponent<InteractionObjectModel>().SetIsDamaged(true);
-                    }
+        // If the object is eligible to respawn a timer
+        if (!excludedObjectNames.Contains(interactionObject.ObjectName) && !interactionObject.CompareTag("Player"))
+        {
+            // Check if there is no existing timer for this object
+            if (!interactionObject.GetIsDead() == true && !objectTimersUI.ContainsKey(objectID))
+            {
+                if (Random.value <= creationChance) // Check creation chance
+                {
+                    // Initialize new timer with random time and mark as not completed
+                    objectTimers[objectID] = (Random.Range(10.0f, 12.0f), false);
+                    
+                    // Instantiate a new timer UI
+                    GameObject newTimerUI = Instantiate(timerPrefab, uiCanvas.transform);
+                    newTimerUI.GetComponent<Timer1>().startTime = objectTimers[objectID].time;
+                    objectTimersUI.Add(objectID, newTimerUI);
+
+                    newTimerUI.transform.localPosition = new Vector3(4.0f, 5.0f, 0);
+                    interactionObject.SetIsDamaged(true); // Set the object as damaged
+                    Debug.Log($"Respawned timer for objectID: {objectID} with initial time: {objectTimers[objectID].time}");
                 }
             }
         }
     }
+}
+
 
     // Handles events for objects when their timer reaches zero
     void HandleEvent(string objectID)
